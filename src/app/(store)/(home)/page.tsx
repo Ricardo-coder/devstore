@@ -18,6 +18,12 @@ async function getFeaturedProducts(): Promise<Array<Product>> {
   return products
 }
 
+export function generateStaticParams() {
+  return {
+    slug: '/',
+  }
+}
+
 export default async function Home() {
   const [highlightedProduct, ...otherProducts] = await getFeaturedProducts()
 
